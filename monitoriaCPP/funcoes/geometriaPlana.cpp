@@ -125,17 +125,20 @@ void triangulo()
 }
 void circu()
 {
-    double area, pi=3.14, raio;
+    double c, d, pi=3.14, raio;
 
     system("clear");
     cout << "CÁLCULO DO CIRCUNFERÊNCIA" << endl
          << endl;
-    cout << "Digite a Àrea: ";
-    cin >> area;
-// sqrt = raiz quadrada
-    raio=sqrt(area/pi);
+    cout << "Digite o diâmetro: ";
+    cin >> d;
+// C = ?
+// C = 2*R*pi
+//
+    raio=d/2;
+    c = 2*pi*raio;
    
-    cout << "O raio encontrado: " << raio << endl;
+    cout << "A circunferência: " << c << endl;
     cout << "Aperte qualquer para voltar ao menu principal" << endl;
     cin.get();
     getchar();
