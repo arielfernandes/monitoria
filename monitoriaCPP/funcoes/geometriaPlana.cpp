@@ -31,20 +31,19 @@ void quadrado()
 
 #include <cstdlib>
 #include <iostream>
-#include <stdlib.h>
 #include <math.h>
-//sqrt() raiz
-//pow() potencia
+#include <stdlib.h>
+// sqrt() raiz
+// pow() potencia
 
 using namespace std;
 
-// Funções 
+// Funções
 void quadrado();
 void triangulo();
 void circu();
 void menu();
 void soma();
-
 
 int main()
 {
@@ -55,8 +54,8 @@ int main()
 
 void menu()
 {
-    string op = " ";
-    while (op != "SAIR") {
+    char op;
+    while (op != '5') {
         system("clear");
         cout << "GEOMETRIA PLANA" << endl;
         cout << "MENU PRINCIPAL:" << endl;
@@ -68,23 +67,34 @@ void menu()
         cout << "OPÇÃO =>  ";
         cin >> op;
 
-        if (op == "1") {
-            quadrado();
-        } else if (op == "2") {
-            triangulo();
-        } else if (op == "3") {
-            circu();
-        }else if ( op == "4" ) {
-            soma();
-        }else if( op == "5" ) {
-            op = "SAIR";
-        }else {
-            cout << "Valor não encontrado!" << endl;
+        switch (op) {
+            case '1':
+                quadrado();
+                break;
+            case '2':
+                triangulo();
+                break;
+            case '3':
+                circu();
+                break;
+            case '4':
+                soma();
+                break;
+            case '5':
+                cout << "Programa Encerrado!"<<endl;
+                break;
+            default:
+                cout << "Valor não encontrado!" << endl;
+                cout << "Aperte qualquer para voltar ao menu principal" << endl;
+                getchar();
+                cin.get();
+                break;
         }
     }
 }
-void soma(){
-    cout << "somei "<< endl;
+void soma()
+{
+    cout << "somei " << endl;
     getchar();
     cin.get();
 }
@@ -100,13 +110,13 @@ void quadrado()
     area = lado * lado;
     cout << "A área do quadrado é " << area << endl
          << endl;
-    cout << "Aperte qualquer para voltar ao menu principal" << endl;
+    cout << "Aperte ENTER para voltar ao menu principal" << endl;
     cin.get();
     getchar();
 }
 void triangulo()
 {
-    //A = (b*h)/2
+    // A = (b*h)/2
 
     double base, altura, area;
 
@@ -116,28 +126,28 @@ void triangulo()
     cin >> base;
     cout << "Digite a altura: ";
     cin >> altura;
-    area = (base*altura)/2;
-    cout << "\nA área do triângulo é de: " << area << " cm²" <<endl;
-    cout << "Aperte qualquer para voltar ao menu principal" << endl;
+    area = (base * altura) / 2;
+    cout << "\nA área do triângulo é de: " << area << " cm²" << endl;
+    cout << "Aperte ENTER para voltar ao menu principal" << endl;
 
     cin.get();
     getchar();
 }
 void circu()
 {
-    double c, d, pi=3.14, raio;
+    double c, d, pi = 3.14, raio;
 
     system("clear");
     cout << "CÁLCULO DO CIRCUNFERÊNCIA" << endl
          << endl;
     cout << "Digite o diâmetro: ";
     cin >> d;
-// C = ?
-// C = 2*R*pi
-//
-    raio=d/2;
-    c = 2*pi*raio;
-   
+    // C = ?
+    // C = 2*R*pi
+    //
+    raio = d / 2;
+    c = 2 * pi * raio;
+
     cout << "A circunferência: " << c << endl;
     cout << "Aperte qualquer para voltar ao menu principal" << endl;
     cin.get();
